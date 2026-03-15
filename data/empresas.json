@@ -1,10 +1,10 @@
 [
   {
-    "nome": "47.383.897/0001-43 - BN TECH",
-    "emails": ["brenonorberto@gmail.com"]
+    "nome": "empresa1",
+    "emails": ["email1@empresa.com", "email2@empresa.com"]
   },
   {
     "nome": "empresa2",
-    "emails": ["brenonorberto@gmail.com", "diebfran@gmail.com"]
+    "emails": ["contato@empresa2.com"]
   }
 ]
