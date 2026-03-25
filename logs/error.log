@@ -1,0 +1,6 @@
+[19-03-2026 16:35:46] [19/03/2026 16:35:46]: ❌ Erro na tentativa 1: ENOENT: no such file or directory, open '/Users/breno/Projetos/email-sender/empresas/empresa2/Ciclo da Vida - Descrição.pdf'
+[19-03-2026 16:35:53] [19/03/2026 16:35:53]: ❌ Erro na tentativa 2: ENOENT: no such file or directory, open '/Users/breno/Projetos/email-sender/empresas/empresa2/26_FEV_DNA_DESCONECTADO_ESTUDO 4.pdf'
+[19-03-2026 16:36:05] [19/03/2026 16:36:05]: ❌ Erro na tentativa 3: ENOENT: no such file or directory, open '/Users/breno/Projetos/email-sender/empresas/empresa2/26_FEV_DNA_DESCONECTADO_ESTUDO 4.pdf'
+[19-03-2026 16:36:05] [19/03/2026 16:36:05]: ❌ Erro ao enviar email para empresa2 após 3 tentativas: ENOENT: no such file or directory, open '/Users/breno/Projetos/email-sender/empresas/empresa2/26_FEV_DNA_DESCONECTADO_ESTUDO 4.pdf'
+[19-03-2026 16:36:05] [19/03/2026 16:36:05]: ❌ ENVIO PARA [KGR3E7Y] EMPRESA2 FALHOU
+

@@ -1,7 +1,7 @@
 import chokidar from "chokidar"
 import path from "path"
 import { config } from "../config/env.js"
-import { logger } from "../utils/logger.js"
+import { logger, obterTimestampBrasileiro } from "../utils/logger.js"
 
 export function iniciarWatcher(callback) {
   // BUG 5 FIX: fila gerenciada com array limpo após processamento
@@ -46,7 +46,14 @@ export function iniciarWatcher(callback) {
     if (!fila[empresa].includes(filePath)) {
       fila[empresa].push(filePath)
       // BUG 4 FIX: usar logger em vez de console.log
-      logger.info(`Arquivo adicionado à fila: ${filePath}`)
+      const nomeArquivo = path.basename(filePath)
+      const agora = new Date()
+      const timestamp = `[${agora.toLocaleDateString("pt-BR")} ${agora.toLocaleTimeString("pt-BR")}]: `
+      logger.info(
+        `${timestamp}📥  Arquivo detectado e adicionado à fila: ${nomeArquivo}`,
+      )
+      logger.info(`${timestamp}📁 Empresa: ${empresa}`)
+      logger.info(`${timestamp}📍 Caminho: ${filePath}`)
     }
   })
 

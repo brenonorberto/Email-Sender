@@ -2,30 +2,53 @@ import { transporter } from "../config/email.js"
 import { config } from "../config/env.js"
 import path from "path"
 import fs from "fs"
-import { logger } from "../utils/logger.js"
+import { logger, obterTimestampBrasileiro } from "../utils/logger.js"
 import { moverParaEnviados, moverParaErro } from "../utils/fileUtils.js"
 import { checkRateLimit, registerEmailSent } from "../utils/rateLimiter.js"
 
 // BUG 8 FIX: retry logic com backoff exponencial
 const MAX_RETRIES = Number(process.env.MAX_RETRIES) || 3
 
-async function enviarComRetry(mailOptions, tentativa = 1) {
+function obterTimestampComProcessId(processId) {
+  const timestamp = `[${new Date().toLocaleDateString("pt-BR")} ${new Date().toLocaleTimeString("pt-BR")}]`
+  const prefix = processId ? ` [${processId}]` : ""
+  return `${timestamp}${prefix}:`
+}
+
+async function enviarComRetry(mailOptions, tentativa = 1, processId = "") {
   try {
-    return await transporter.sendMail(mailOptions)
+    const logPrefix = obterTimestampComProcessId(processId)
+    logger.info(
+      `${logPrefix} [Tentativa ${tentativa}/${MAX_RETRIES}] Enviando email para ${mailOptions.to}...`,
+    )
+    const resultado = await transporter.sendMail(mailOptions)
+    logger.info(
+      `${logPrefix} ✅ Email enviado com sucesso. Message ID: ${resultado.messageId}`,
+    )
+    return resultado
   } catch (err) {
+    const logPrefix = obterTimestampComProcessId(processId)
+    logger.error(
+      `${logPrefix} ❌ Erro na tentativa ${tentativa}: ${err.message}`,
+    )
+
     if (tentativa < MAX_RETRIES) {
       const delayMs = 5000 * tentativa
       logger.warn(
-        `Tentativa ${tentativa}/${MAX_RETRIES} falhou. Retentando em ${delayMs}ms... (${err.message})`,
+        `${logPrefix} ⏳ Retentando em ${delayMs}ms... (Tentativa ${tentativa}/${MAX_RETRIES})`,
       )
       await new Promise((resolve) => setTimeout(resolve, delayMs))
-      return enviarComRetry(mailOptions, tentativa + 1)
+      return enviarComRetry(mailOptions, tentativa + 1, processId)
     }
     throw err // esgotou tentativas — propaga o erro
   }
 }
 
-export async function enviarEmail(empresa, emails, arquivos) {
+export async function enviarEmail(empresa, emails, arquivos, processId = "") {
+  const logPrefix = obterTimestampComProcessId(processId)
+
+  logger.info(`${logPrefix} 🚀 INICIANDO ENVIO PARA ${empresa.toUpperCase()}`)
+
   // BUG 11 FIX: suporte a múltiplos destinatários (string ou array)
   const destinatarios = Array.isArray(emails) ? emails.join(", ") : emails
 
@@ -35,7 +58,7 @@ export async function enviarEmail(empresa, emails, arquivos) {
     const filePath = path.resolve(file)
 
     if (!fs.existsSync(filePath)) {
-      logger.warn(`Arquivo não encontrado, ignorado: ${filePath}`)
+      logger.warn(`${logPrefix} Arquivo não encontrado, ignorado: ${filePath}`)
       continue
     }
 
@@ -47,7 +70,9 @@ export async function enviarEmail(empresa, emails, arquivos) {
   }
 
   if (attachments.length === 0) {
-    logger.warn(`Nenhum arquivo válido para enviar à empresa ${empresa}`)
+    logger.warn(
+      `${logPrefix} Nenhum arquivo válido para enviar à empresa ${empresa}`,
+    )
     return { sucesso: false, arquivos: [] }
   }
 
@@ -82,7 +107,9 @@ export async function enviarEmail(empresa, emails, arquivos) {
         htmlBody += `<p><img src=\"cid:assinatura\"/></p>`
         imageUsed = true
       } else {
-        logger.warn(`Assinatura de imagem não encontrada: ${sigPath}`)
+        logger.warn(
+          `${logPrefix} Assinatura de imagem não encontrada: ${sigPath}`,
+        )
       }
     }
 
@@ -92,22 +119,25 @@ export async function enviarEmail(empresa, emails, arquivos) {
       textBody += `\n\n${signatureText}`
     }
 
+    logger.info(`${logPrefix} 📧 Destinatário(s): ${destinatarios}`)
+    logger.info(`${logPrefix} 📎 Arquivo(s): ${attachments.length}`)
+
     // BUG 8 FIX: usa retry em vez de envio direto
-    await enviarComRetry({
-      from: process.env.EMAIL_USER,
-      to: destinatarios,
-      subject: `Arquivos enviados - ${empresa}`,
-      text: textBody,
-      html: htmlBody,
-      attachments,
-    })
+    await enviarComRetry(
+      {
+        from: process.env.EMAIL_USER,
+        to: destinatarios,
+        subject: `Arquivos enviados - ${empresa}`,
+        text: textBody,
+        html: htmlBody,
+        attachments,
+      },
+      1,
+      processId,
+    )
 
     // Registrar envio bem-sucedido no rate limiter
     registerEmailSent()
-
-    logger.info(
-      `Email enviado para ${empresa} → ${destinatarios} (${attachments.length} arquivo(s))`,
-    )
 
     // BUG 7 FIX: mover arquivos APÓS log de sucesso, com log correto do destino
     for (const file of arquivos) {
@@ -115,15 +145,21 @@ export async function enviarEmail(empresa, emails, arquivos) {
       if (!fs.existsSync(origem)) continue
 
       const destino = moverParaEnviados(origem)
-      logger.info(`Arquivo movido para ENVIADOS: ${destino}`)
+      logger.info(
+        `${logPrefix} ✅ Arquivo movido para ENVIADOS: ${path.basename(destino)}`,
+      )
     }
+
+    logger.info(
+      `${logPrefix} ✨ ENVIO PARA ${empresa.toUpperCase()} CONCLUÍDO COM SUCESSO\n`,
+    )
 
     // BUG 5 FIX: retornar lista de arquivos processados para limpeza da fila
     return { sucesso: true, arquivos }
   } catch (err) {
     // BUG 9 + 10 FIX: mover para ERRO/ após esgotar tentativas, não silenciar
     logger.error(
-      `Erro ao enviar email para ${empresa} após ${MAX_RETRIES} tentativas: ${err.message}`,
+      `${logPrefix} ❌ Erro ao enviar email para ${empresa} após ${MAX_RETRIES} tentativas: ${err.message}`,
     )
 
     for (const file of arquivos) {
@@ -131,8 +167,12 @@ export async function enviarEmail(empresa, emails, arquivos) {
       if (!fs.existsSync(origem)) continue
 
       const destino = moverParaErro(origem)
-      logger.error(`Arquivo movido para ERRO: ${destino}`)
+      logger.error(
+        `${logPrefix} ❌ Arquivo movido para ERRO: ${path.basename(destino)}`,
+      )
     }
+
+    logger.error(`${logPrefix} ❌ ENVIO PARA ${empresa.toUpperCase()} FALHOU\n`)
 
     return { sucesso: false, arquivos }
   }

@@ -1,8 +1,12 @@
 import path from "path"
 import empresas from "../data/empresas.json" with { type: "json" }
 import { enviarEmail } from "./emailService.js"
-import { logger } from "../utils/logger.js"
+import { logger, obterTimestampBrasileiro } from "../utils/logger.js"
 import { config } from "../config/env.js"
+
+function gerarProcessId() {
+  return Math.random().toString(36).substring(2, 9).toUpperCase()
+}
 
 function normalizarCNPJ(cnpj) {
   return cnpj.replace(/\D/g, "")
@@ -43,10 +47,30 @@ export async function processarArquivo(filePath) {
     return
   }
 
-  await enviarEmail(empresaConfig.nome, emails, [filePath])
+  const processId = gerarProcessId()
+  await enviarEmail(empresaConfig.nome, emails, [filePath], processId)
 }
 
 export async function processarFila(fila) {
+  const processId = gerarProcessId()
+  let totalArquivos = 0
+
+  // Contar total de arquivos
+  for (const empresa in fila) {
+    totalArquivos += fila[empresa].length
+  }
+
+  if (totalArquivos === 0) return
+
+  logger.info(`\n${"=".repeat(70)}`)
+  logger.info(
+    `[${new Date().toLocaleDateString("pt-BR")} ${new Date().toLocaleTimeString("pt-BR")}]  🔄 [${processId}] INICIANDO PROCESSAMENTO DE FILA`,
+  )
+  logger.info(
+    `[${new Date().toLocaleDateString("pt-BR")} ${new Date().toLocaleTimeString("pt-BR")}]  📦 Total de arquivos: ${totalArquivos}`,
+  )
+  logger.info(`${"=".repeat(70)}\n`)
+
   for (const empresa in fila) {
     const arquivos = fila[empresa]
 
@@ -65,9 +89,15 @@ export async function processarFila(fila) {
       continue
     }
 
-    await enviarEmail(empresaConfig.nome, emails, arquivos)
+    await enviarEmail(empresaConfig.nome, emails, arquivos, processId)
 
     // limpar a fila após envio
     fila[empresa] = []
   }
+
+  logger.info(`${"=".repeat(70)}`)
+  logger.info(
+    `[${new Date().toLocaleDateString("pt-BR")} ${new Date().toLocaleTimeString("pt-BR")}] ✅ [${processId}] PROCESSAMENTO DE FILA CONCLUÍDO`,
+  )
+  logger.info(`${"=".repeat(70)}\n`)
 }

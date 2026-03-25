@@ -1,0 +1,175 @@
+[19-03-2026 16:25:11] [19/03/2026 16:25:11]: 📥  Arquivo detectado e adicionado à fila: 14-12-2024_08_47_06.pdf
+[19-03-2026 16:25:11] [19/03/2026 16:25:11]: 📁 Empresa: empresa2
+[19-03-2026 16:25:11] [19/03/2026 16:25:11]: 📍 Caminho: empresas/empresa2/14-12-2024_08_47_06.pdf
+[19-03-2026 16:25:56] 
+======================================================================
+[19-03-2026 16:25:56] [19/03/2026 16:25:56]  🔄 [M8181HV] INICIANDO PROCESSAMENTO DE FILA
+[19-03-2026 16:25:56] [19/03/2026 16:25:56]  📦 Total de arquivos: 1
+[19-03-2026 16:25:56] ======================================================================
+
+[19-03-2026 16:25:56] [19/03/2026 16:25:56]: 🚀 INICIANDO ENVIO PARA [M8181HV] EMPRESA2
+[19-03-2026 16:25:56] Assinatura de imagem não encontrada: /Users/breno/Projetos/email-sender/config/assinatura.png
+[19-03-2026 16:25:56] [19/03/2026 16:25:56]: 📧 Destinatário(s): brenonorberto@gmail.com
+[19-03-2026 16:25:56] [19/03/2026 16:25:56]: 📎 Arquivo(s): 1
+[19-03-2026 16:25:56] [19/03/2026 16:25:56]: [Tentativa 1/3] Enviando email para brenonorberto@gmail.com...
+[19-03-2026 16:26:00] [19/03/2026 16:25:56]: ✅ Email enviado com sucesso. Message ID: <b56f7e67-3df4-645a-223f-c9a67b931ad4@gmail.com>
+[19-03-2026 16:26:00] Rate limiter: 5/450 emails enviados hoje
+[19-03-2026 16:26:01] [19/03/2026 16:26:01]: ✅ Arquivo movido para ENVIADOS: 14-12-2024_08_47_06.pdf
+[19-03-2026 16:26:01] [19/03/2026 16:26:01]: ✨ ENVIO PARA [M8181HV] EMPRESA2 CONCLUÍDO COM SUCESSO
+
+[19-03-2026 16:26:01] ======================================================================
+[19-03-2026 16:26:01] [19/03/2026 16:26:01] ✅ [M8181HV] PROCESSAMENTO DE FILA CONCLUÍDO
+[19-03-2026 16:26:01] ======================================================================
+
+[19-03-2026 16:32:31] [19/03/2026 16:32:31]: 📥  Arquivo detectado e adicionado à fila: 26_FEV_DNA_DESCONECTADO_ESTUDO 4.pdf
+[19-03-2026 16:32:31] [19/03/2026 16:32:31]: 📁 Empresa: empresa2
+[19-03-2026 16:32:31] [19/03/2026 16:32:31]: 📍 Caminho: empresas/empresa2/26_FEV_DNA_DESCONECTADO_ESTUDO 4.pdf
+[19-03-2026 16:32:37] [19/03/2026 16:32:37]: 📥  Arquivo detectado e adicionado à fila: arquitetura.pdf
+[19-03-2026 16:32:37] [19/03/2026 16:32:37]: 📁 Empresa: empresa2
+[19-03-2026 16:32:37] [19/03/2026 16:32:37]: 📍 Caminho: empresas/empresa2/arquitetura.pdf
+[19-03-2026 16:32:48] [19/03/2026 16:32:48]: 📥  Arquivo detectado e adicionado à fila: Ciclo da Vida - Descrição.pdf
+[19-03-2026 16:32:48] [19/03/2026 16:32:48]: 📁 Empresa: empresa2
+[19-03-2026 16:32:48] [19/03/2026 16:32:48]: 📍 Caminho: empresas/empresa2/Ciclo da Vida - Descrição.pdf
+[19-03-2026 16:32:56] 
+======================================================================
+[19-03-2026 16:32:56] [19/03/2026 16:32:56]  🔄 [FI3744O] INICIANDO PROCESSAMENTO DE FILA
+[19-03-2026 16:32:56] [19/03/2026 16:32:56]  📦 Total de arquivos: 3
+[19-03-2026 16:32:56] ======================================================================
+
+[19-03-2026 16:32:56] [19/03/2026 16:32:56]: 🚀 INICIANDO ENVIO PARA [FI3744O] EMPRESA2
+[19-03-2026 16:32:56] Assinatura de imagem não encontrada: /Users/breno/Projetos/email-sender/config/assinatura.png
+[19-03-2026 16:32:56] [19/03/2026 16:32:56]: 📧 Destinatário(s): brenonorberto@gmail.com
+[19-03-2026 16:32:56] [19/03/2026 16:32:56]: 📎 Arquivo(s): 3
+[19-03-2026 16:32:56] [19/03/2026 16:32:56]: [Tentativa 1/3] Enviando email para brenonorberto@gmail.com...
+[19-03-2026 16:33:56] 
+======================================================================
+[19-03-2026 16:33:56] [19/03/2026 16:33:56]  🔄 [KGR3E7Y] INICIANDO PROCESSAMENTO DE FILA
+[19-03-2026 16:33:56] [19/03/2026 16:33:56]  📦 Total de arquivos: 3
+[19-03-2026 16:33:56] ======================================================================
+
+[19-03-2026 16:33:56] [19/03/2026 16:33:56]: 🚀 INICIANDO ENVIO PARA [KGR3E7Y] EMPRESA2
+[19-03-2026 16:33:56] Assinatura de imagem não encontrada: /Users/breno/Projetos/email-sender/config/assinatura.png
+[19-03-2026 16:33:56] [19/03/2026 16:33:56]: 📧 Destinatário(s): brenonorberto@gmail.com
+[19-03-2026 16:33:56] [19/03/2026 16:33:56]: 📎 Arquivo(s): 3
+[19-03-2026 16:33:56] [19/03/2026 16:33:56]: [Tentativa 1/3] Enviando email para brenonorberto@gmail.com...
+[19-03-2026 16:34:54] [19/03/2026 16:32:56]: ✅ Email enviado com sucesso. Message ID: <da8f7a37-4a33-08c1-99b5-76aa6497ec12@gmail.com>
+[19-03-2026 16:34:54] Rate limiter: 6/450 emails enviados hoje
+[19-03-2026 16:34:54] [19/03/2026 16:34:54]: ✅ Arquivo movido para ENVIADOS: 26_FEV_DNA_DESCONECTADO_ESTUDO 4.pdf
+[19-03-2026 16:34:54] [19/03/2026 16:34:54]: ✅ Arquivo movido para ENVIADOS: arquitetura.pdf
+[19-03-2026 16:34:54] [19/03/2026 16:34:54]: ✅ Arquivo movido para ENVIADOS: Ciclo da Vida - Descrição.pdf
+[19-03-2026 16:34:54] [19/03/2026 16:34:54]: ✨ ENVIO PARA [FI3744O] EMPRESA2 CONCLUÍDO COM SUCESSO
+
+[19-03-2026 16:34:54] ======================================================================
+[19-03-2026 16:34:54] [19/03/2026 16:34:54] ✅ [FI3744O] PROCESSAMENTO DE FILA CONCLUÍDO
+[19-03-2026 16:34:54] ======================================================================
+
+[19-03-2026 16:35:46] [19/03/2026 16:35:46]: ⏳ Retentando em 5000ms... (Tentativa 1/3)
+[19-03-2026 16:35:51] [19/03/2026 16:35:51]: [Tentativa 2/3] Enviando email para brenonorberto@gmail.com...
+[19-03-2026 16:35:53] [19/03/2026 16:35:53]: ⏳ Retentando em 10000ms... (Tentativa 2/3)
+[19-03-2026 16:36:03] [19/03/2026 16:36:03]: [Tentativa 3/3] Enviando email para brenonorberto@gmail.com...
+[19-03-2026 16:36:05] ======================================================================
+[19-03-2026 16:36:05] [19/03/2026 16:36:05] ✅ [KGR3E7Y] PROCESSAMENTO DE FILA CONCLUÍDO
+[19-03-2026 16:36:05] ======================================================================
+
+[19-03-2026 16:46:15] ✅ Variáveis de ambiente validadas
+[19-03-2026 16:46:15] 📁 Pasta monitorada: ./empresas
+[19-03-2026 16:46:15] 🔐 Testando conexão com Gmail...
+[19-03-2026 16:46:18] ✅ Conexão com Gmail verificada com sucesso
+[19-03-2026 16:46:18] 🎯 Iniciando sistema de monitoramento...
+[19-03-2026 16:46:18] Watcher iniciado em: /Users/breno/Projetos/email-sender/empresas
+[19-03-2026 16:46:37] [19/03/2026 16:46:37]: 📥  Arquivo detectado e adicionado à fila: SOMOS UM_ATE QUE A MORTE NOS SEPARE_ESTUDO_1.pdf
+[19-03-2026 16:46:37] [19/03/2026 16:46:37]: 📁 Empresa: empresa2
+[19-03-2026 16:46:37] [19/03/2026 16:46:37]: 📍 Caminho: empresas/empresa2/SOMOS UM_ATE QUE A MORTE NOS SEPARE_ESTUDO_1.pdf
+[19-03-2026 16:47:18] 
+======================================================================
+[19-03-2026 16:47:18] [19/03/2026 16:47:18]  🔄 [32NVJEB] INICIANDO PROCESSAMENTO DE FILA
+[19-03-2026 16:47:18] [19/03/2026 16:47:18]  📦 Total de arquivos: 1
+[19-03-2026 16:47:18] ======================================================================
+
+[19-03-2026 16:47:18] [19/03/2026 16:47:18] [32NVJEB]: 🚀 INICIANDO ENVIO PARA EMPRESA2
+[19-03-2026 16:47:18] [19/03/2026 16:47:18] [32NVJEB]: Assinatura de imagem não encontrada: /Users/breno/Projetos/email-sender/config/assinatura.png
+[19-03-2026 16:47:18] [19/03/2026 16:47:18] [32NVJEB]: 📧 Destinatário(s): brenonorberto@gmail.com
+[19-03-2026 16:47:18] [19/03/2026 16:47:18] [32NVJEB]: 📎 Arquivo(s): 1
+[19-03-2026 16:47:18] [19/03/2026 16:47:18] [32NVJEB]: [Tentativa 1/3] Enviando email para brenonorberto@gmail.com...
+[19-03-2026 16:47:23] [19/03/2026 16:47:18] [32NVJEB]: ✅ Email enviado com sucesso. Message ID: <3909fb0d-97ec-7f25-19a3-9de5a5312de0@gmail.com>
+[19-03-2026 16:47:23] Rate limiter: 1/450 emails enviados hoje
+[19-03-2026 16:47:23] [19/03/2026 16:47:18] [32NVJEB]: ✅ Arquivo movido para ENVIADOS: SOMOS UM_ATE QUE A MORTE NOS SEPARE_ESTUDO_1.pdf
+[19-03-2026 16:47:23] [19/03/2026 16:47:18] [32NVJEB]: ✨ ENVIO PARA EMPRESA2 CONCLUÍDO COM SUCESSO
+
+[19-03-2026 16:47:23] ======================================================================
+[19-03-2026 16:47:23] [19/03/2026 16:47:23] ✅ [32NVJEB] PROCESSAMENTO DE FILA CONCLUÍDO
+[19-03-2026 16:47:23] ======================================================================
+
+[19-03-2026 16:52:16] [19/03/2026 16:52:16]: 📥  Arquivo detectado e adicionado à fila: 26_FEV_DNA_DESCONECTADO_ESTUDO 4.pdf
+[19-03-2026 16:52:16] [19/03/2026 16:52:16]: 📁 Empresa: empresa2
+[19-03-2026 16:52:16] [19/03/2026 16:52:16]: 📍 Caminho: empresas/empresa2/26_FEV_DNA_DESCONECTADO_ESTUDO 4.pdf
+[19-03-2026 16:52:16] [19/03/2026 16:52:16]: 📥  Arquivo detectado e adicionado à fila: 14-12-2024_08_47_06.pdf
+[19-03-2026 16:52:16] [19/03/2026 16:52:16]: 📁 Empresa: empresa2
+[19-03-2026 16:52:16] [19/03/2026 16:52:16]: 📍 Caminho: empresas/empresa2/14-12-2024_08_47_06.pdf
+[19-03-2026 16:52:18] 
+======================================================================
+[19-03-2026 16:52:18] [19/03/2026 16:52:18]  🔄 [NAMIQNL] INICIANDO PROCESSAMENTO DE FILA
+[19-03-2026 16:52:18] [19/03/2026 16:52:18]  📦 Total de arquivos: 2
+[19-03-2026 16:52:18] ======================================================================
+
+[19-03-2026 16:52:18] [19/03/2026 16:52:18] [NAMIQNL]: 🚀 INICIANDO ENVIO PARA EMPRESA2
+[19-03-2026 16:52:18] [19/03/2026 16:52:18] [NAMIQNL]: Assinatura de imagem não encontrada: /Users/breno/Projetos/email-sender/config/assinatura.png
+[19-03-2026 16:52:18] [19/03/2026 16:52:18] [NAMIQNL]: 📧 Destinatário(s): brenonorberto@gmail.com
+[19-03-2026 16:52:18] [19/03/2026 16:52:18] [NAMIQNL]: 📎 Arquivo(s): 2
+[19-03-2026 16:52:18] [19/03/2026 16:52:18] [NAMIQNL]: [Tentativa 1/3] Enviando email para brenonorberto@gmail.com...
+[19-03-2026 16:52:25] [19/03/2026 16:52:18] [NAMIQNL]: ✅ Email enviado com sucesso. Message ID: <a4c50169-3da9-72fb-b20d-cb222232760a@gmail.com>
+[19-03-2026 16:52:25] Rate limiter: 2/450 emails enviados hoje
+[19-03-2026 16:52:25] [19/03/2026 16:52:18] [NAMIQNL]: ✅ Arquivo movido para ENVIADOS: 26_FEV_DNA_DESCONECTADO_ESTUDO 4.pdf
+[19-03-2026 16:52:25] [19/03/2026 16:52:18] [NAMIQNL]: ✅ Arquivo movido para ENVIADOS: 14-12-2024_08_47_06.pdf
+[19-03-2026 16:52:25] [19/03/2026 16:52:18] [NAMIQNL]: ✨ ENVIO PARA EMPRESA2 CONCLUÍDO COM SUCESSO
+
+[19-03-2026 16:52:25] ======================================================================
+[19-03-2026 16:52:25] [19/03/2026 16:52:25] ✅ [NAMIQNL] PROCESSAMENTO DE FILA CONCLUÍDO
+[19-03-2026 16:52:25] ======================================================================
+
+[19-03-2026 16:52:27] [19/03/2026 16:52:27]: 📥  Arquivo detectado e adicionado à fila: 14-12-2024_08_47_06.pdf
+[19-03-2026 16:52:27] [19/03/2026 16:52:27]: 📁 Empresa: empresa2
+[19-03-2026 16:52:27] [19/03/2026 16:52:27]: 📍 Caminho: empresas/empresa2/14-12-2024_08_47_06.pdf
+[19-03-2026 16:52:33] [19/03/2026 16:52:33]: 📥  Arquivo detectado e adicionado à fila: arquitetura.pdf
+[19-03-2026 16:52:33] [19/03/2026 16:52:33]: 📁 Empresa: empresa2
+[19-03-2026 16:52:33] [19/03/2026 16:52:33]: 📍 Caminho: empresas/empresa2/arquitetura.pdf
+[19-03-2026 16:53:18] 
+======================================================================
+[19-03-2026 16:53:18] [19/03/2026 16:53:18]  🔄 [0BQFEQY] INICIANDO PROCESSAMENTO DE FILA
+[19-03-2026 16:53:18] [19/03/2026 16:53:18]  📦 Total de arquivos: 2
+[19-03-2026 16:53:18] ======================================================================
+
+[19-03-2026 16:53:18] [19/03/2026 16:53:18] [0BQFEQY]: 🚀 INICIANDO ENVIO PARA EMPRESA2
+[19-03-2026 16:53:18] [19/03/2026 16:53:18] [0BQFEQY]: Assinatura de imagem não encontrada: /Users/breno/Projetos/email-sender/config/assinatura.png
+[19-03-2026 16:53:18] [19/03/2026 16:53:18] [0BQFEQY]: 📧 Destinatário(s): brenonorberto@gmail.com
+[19-03-2026 16:53:18] [19/03/2026 16:53:18] [0BQFEQY]: 📎 Arquivo(s): 2
+[19-03-2026 16:53:18] [19/03/2026 16:53:18] [0BQFEQY]: [Tentativa 1/3] Enviando email para brenonorberto@gmail.com...
+[19-03-2026 16:54:18] 
+======================================================================
+[19-03-2026 16:54:18] [19/03/2026 16:54:18]  🔄 [1XP6NZI] INICIANDO PROCESSAMENTO DE FILA
+[19-03-2026 16:54:18] [19/03/2026 16:54:18]  📦 Total de arquivos: 2
+[19-03-2026 16:54:18] ======================================================================
+
+[19-03-2026 16:54:18] [19/03/2026 16:54:18] [1XP6NZI]: 🚀 INICIANDO ENVIO PARA EMPRESA2
+[19-03-2026 16:54:18] [19/03/2026 16:54:18] [1XP6NZI]: Assinatura de imagem não encontrada: /Users/breno/Projetos/email-sender/config/assinatura.png
+[19-03-2026 16:54:18] [19/03/2026 16:54:18] [1XP6NZI]: 📧 Destinatário(s): brenonorberto@gmail.com
+[19-03-2026 16:54:18] [19/03/2026 16:54:18] [1XP6NZI]: 📎 Arquivo(s): 2
+[19-03-2026 16:54:18] [19/03/2026 16:54:18] [1XP6NZI]: [Tentativa 1/3] Enviando email para brenonorberto@gmail.com...
+[19-03-2026 16:55:14] [19/03/2026 16:53:18] [0BQFEQY]: ✅ Email enviado com sucesso. Message ID: <388dd772-6a6b-12a3-8a05-a53fc3d1dfc6@gmail.com>
+[19-03-2026 16:55:14] Rate limiter: 3/450 emails enviados hoje
+[19-03-2026 16:55:14] [19/03/2026 16:53:18] [0BQFEQY]: ✅ Arquivo movido para ENVIADOS: 14-12-2024_08_47_06.pdf
+[19-03-2026 16:55:14] [19/03/2026 16:53:18] [0BQFEQY]: ✅ Arquivo movido para ENVIADOS: arquitetura.pdf
+[19-03-2026 16:55:14] [19/03/2026 16:53:18] [0BQFEQY]: ✨ ENVIO PARA EMPRESA2 CONCLUÍDO COM SUCESSO
+
+[19-03-2026 16:55:14] ======================================================================
+[19-03-2026 16:55:14] [19/03/2026 16:55:14] ✅ [0BQFEQY] PROCESSAMENTO DE FILA CONCLUÍDO
+[19-03-2026 16:55:14] ======================================================================
+
+[19-03-2026 16:56:08] [19/03/2026 16:54:18] [1XP6NZI]: ✅ Email enviado com sucesso. Message ID: <5ab4e262-0c63-9396-cced-ae802395e77a@gmail.com>
+[19-03-2026 16:56:08] Rate limiter: 4/450 emails enviados hoje
+[19-03-2026 16:56:08] [19/03/2026 16:54:18] [1XP6NZI]: ✨ ENVIO PARA EMPRESA2 CONCLUÍDO COM SUCESSO
+
+[19-03-2026 16:56:08] ======================================================================
+[19-03-2026 16:56:08] [19/03/2026 16:56:08] ✅ [1XP6NZI] PROCESSAMENTO DE FILA CONCLUÍDO
+[19-03-2026 16:56:08] ======================================================================
+

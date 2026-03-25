@@ -1,8 +1,10 @@
 import fs from "fs"
+import path from "path"
 import { config } from "../config/env.js"
 
-const APP_LOG = "./logs/app.log"
-const ERROR_LOG = "./logs/error.log"
+// Usar path.join() para compatibilidade cross-platform (Windows, Linux, macOS)
+const APP_LOG = path.join(process.cwd(), "logs", "app.log")
+const ERROR_LOG = path.join(process.cwd(), "logs", "error.log")
 
 function formatarDataBrasileira(data) {
   const dia = String(data.getDate()).padStart(2, "0")
@@ -12,6 +14,10 @@ function formatarDataBrasileira(data) {
   const minutos = String(data.getMinutes()).padStart(2, "0")
   const segundos = String(data.getSeconds()).padStart(2, "0")
   return `${dia}-${mes}-${ano} ${horas}:${minutos}:${segundos}`
+}
+
+function obterTimestamp() {
+  return `[${formatarDataBrasileira(new Date())}]`
 }
 
 function getDia(data) {
@@ -53,16 +59,20 @@ function escreverLog(arquivo, mensagem) {
 export const logger = {
   info(mensagem) {
     console.log(mensagem)
-    escreverLog(APP_LOG, `INFO: ${mensagem}`)
+    escreverLog(APP_LOG, mensagem)
   },
 
   warn(mensagem) {
     console.warn(mensagem)
-    escreverLog(APP_LOG, `WARN: ${mensagem}`)
+    escreverLog(APP_LOG, mensagem)
   },
 
   error(mensagem) {
     console.error(mensagem)
-    escreverLog(ERROR_LOG, `ERROR: ${mensagem}`)
+    escreverLog(ERROR_LOG, mensagem)
   },
+}
+
+export function obterTimestampBrasileiro() {
+  return obterTimestamp()
 }
